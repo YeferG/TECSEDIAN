@@ -1,0 +1,33 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+body{
+	text-align: center;
+}
+
+#formulario_registro_rol{
+	height: 100%;
+	margin: 0px;
+}
+
+#form_reg_rol{
+	padding: 0px;
+	height: auto;
+}
+
+label{
+	display: inline-block;
+	width: 150px;
+	text-align: left;
+	font-size: 18px;
+	margin-bottom: 30px;
+}
+
+#agruparRol{
+	margin: auto;
+	text-align: center;
+	width: 800px;
+	margin-bottom: auto;
+}

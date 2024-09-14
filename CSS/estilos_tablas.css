@@ -1,0 +1,74 @@
+/*espacio*/
+.ttlo{
+	text-align: left;
+	margin-top: 10px;
+}
+.tablas{
+	width: 100%;
+ 
+	border-collapse: collapse;
+	border: 1px solid #000; 
+  font-size: 12px;
+}
+
+/* tipografia */
+
+th,td{
+	padding:5px;
+	letter-spacing: 1px;
+  font-size: 10px;
+}	
+tbody td{
+	text-align: center;
+}
+
+/* Graficos y colores */
+thead th{
+	background: linear-gradient(to bottom, rgb(3,3,3,0.1),rgba(3,3,3,0.5));
+	background: #999;
+	border: 1px solid #000;
+}
+
+/* Rayas de cebra */
+
+tbody tr:nth-child(even) {
+  background-color: #999;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #FFF;
+}
+
+tr:hover td{
+  background-color: rgba(245,190,63,.9);
+}
+tr td a{
+  text-decoration: none;
+}
+
+
+/* estilos pa campo busqueda */
+.container-1{
+  text-align: left;
+  font-size: 28px;
+  width: 80%;
+  margin:auto;
+}
+
+.container-1 span{
+  position: relative;
+  top: 20px;
+}
+
+#search{
+  width: 95%;
+  height: 35px;
+  border: none;
+  font-size: 15pt;
+  float: right;
+  color: #65737e;
+  border-radius: 3px;
+  border: 1px solid black;
+  text-align: center;
+  margin: 20px 0px;
+}
