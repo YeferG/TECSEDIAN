@@ -15,7 +15,7 @@ function Header()
     // Salto de línea
     $this->Ln(20);
     $this->Cell(10,7,'Id', 1, 0, 'C', 0);
-	$this->Cell(40,7,'Descripcion', 1, 0, 'C', 0);
+	$this->Cell(60,7,'Descripcion', 1, 0, 'C', 0);
 	$this->Cell(40,7,'Precio compra', 1, 0, 'C', 0);
 	$this->Cell(40,7,'Precio venta', 1, 0, 'C', 0);
 	$this->Cell(30,7,'Stock', 1, 1, 'C', 0);
@@ -35,7 +35,7 @@ function Footer()
 }
 }
 
-$sql="SELECT * FROM Tproductos";
+$sql="SELECT * FROM tbl_productos";
 $result=mysqli_query($con,$sql);             
 
 						
@@ -43,11 +43,11 @@ $pdf = new PDF();
 $pdf->AddPage();
 $pdf->SetFont('Arial','',10);
 while ($mostar= mysqli_fetch_assoc($result)) {
-	$pdf->Cell(10,7,$mostar['proId'], 1, 0, 'C', 0);
-	$pdf->Cell(40,7,$mostar['proNombre'], 1, 0, 'C', 0);
-	$pdf->Cell(40,7,$mostar['proPreCom'], 1, 0, 'C', 0);
-	$pdf->Cell(40,7,$mostar['proPreVen'], 1, 0, 'C', 0);
-	$pdf->Cell(30,7,$mostar['proStock'], 1, 1, 'C', 0);
+	$pdf->Cell(10,7,$mostar['id_produ'], 1, 0, 'C', 0);
+	$pdf->Cell(60,7,$mostar['nom_produ'], 1, 0, 'C', 0);
+	$pdf->Cell(40,7,$mostar['precio_compra'], 1, 0, 'C', 0);
+	$pdf->Cell(40,7,$mostar['precio_venta'], 1, 0, 'C', 0);
+	$pdf->Cell(30,7,$mostar['stock_produ'], 1, 1, 'C', 0);
 }
 $pdf->Output();
 ?>

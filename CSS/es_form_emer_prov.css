@@ -1,0 +1,119 @@
+/* Estilo general para el modal */
+#form_agregar_proveedor {
+    display: none; /* Oculto inicialmente */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px; /* Ancho más amplio */
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    text-align: center;
+}
+
+#form_agregar_proveedor h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Contenedores con flexbox para alinear labels e inputs */
+.conmenu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Alinear verticalmente */
+    margin-bottom: 20px;
+}
+
+.conmenu label {
+    flex: 1; /* Ocupa 1 parte del espacio */
+    color: #333;
+    font-size: 16px;
+    text-align: left;
+    margin-right: 20px; /* Espacio entre el label y el input */
+}
+
+.conmenu input {
+    flex: 2; /* Ocupa 2 partes del espacio */
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    width: 100%;
+}
+
+/* Estilo para el input de Correo que debe ser más grande */
+#correo {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+/* Botón de guardar */
+#form_agregar_proveedor input[type="button"] {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+#form_agregar_proveedor input[type="button"]:hover {
+    background-color: #0056b3;
+}
+
+
+/* Estilos para el overlay */
+#modal-overlay {
+    display: none; /* Oculto inicialmente */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+}
+
+/* Estilo del botón para abrir el modal */
+#open-modal-btn {
+    background-color: #28A745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#open-modal-btn:hover {
+    background-color: #218838;
+}
+
+/* Botón de cierre */
+#close-modal-btn {
+    background-color: #dc3545;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+#close-modal-btn:hover {
+    background-color: #c82333;
+}

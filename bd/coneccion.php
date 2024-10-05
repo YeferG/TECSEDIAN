@@ -23,7 +23,7 @@ class MySQLConnection implements DBConnection {
     private $host = 'localhost';
     private $user = 'root';
     private $password = '';
-    private $database = 'bd_inventario';
+    private $database = 'bd_pruebas';
     private $connection;
 
     public function connect() {

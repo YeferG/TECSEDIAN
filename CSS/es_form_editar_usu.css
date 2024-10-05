@@ -1,0 +1,65 @@
+/* Estilo general del contenedor del formulario */
+#container {
+    margin: auto;
+    text-align: center;
+    margin-top: 25px; /* Separación del borde superior */
+    width: 600px; /* Ancho del formulario */
+}
+
+/* Estilo del título del formulario */
+#formulario_edit h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Estilo para los campos de texto */
+#formulario_edit label {
+    display: block;
+    font-size: 16px;
+    color: #333;
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+#formulario_edit input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* Campo de correo más ancho */
+#editEmail {
+    width: 100%; /* Abarca todo el ancho */
+}
+
+/* Estilo para los botones */
+.btns {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.btns:hover {
+    background-color: #0056b3;
+}
+
+/* Botón de cancelar con estilo diferente */
+a input.btns {
+    background-color: #dc3545;
+    transition: background-color 0.3s ease;
+}
+
+a input.btns:hover {
+    background-color: #c82333;
+}

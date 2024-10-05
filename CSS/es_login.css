@@ -1,0 +1,106 @@
+/* Reseteo de estilos básicos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+}
+
+/* Estilo general del body */
+body {
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f9;
+    font-size: 16px;
+}
+
+/* Contenedor principal del login */
+#todo {
+    background: #fff;
+    width: 400px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Encabezado del formulario */
+h1 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Formulario */
+form {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Estilos para los inputs */
+input {
+    width: 100%;
+    height: 40px;
+    margin: 10px 0;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #007BFF;
+    box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Botón de envío */
+input[type="submit"] {
+    background-color: #007BFF;
+    color: #fff;
+    font-size: 18px;
+    width: 100%;
+    height: 45px;
+    margin-top: 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+    box-shadow: 0px 4px 15px rgba(0, 123, 255, 0.4);
+}
+
+/* Imagen en la parte superior (si se utiliza) */
+img {
+    width: 100%;
+    border-radius: 12px 12px 0 0;
+}
+
+/* Párrafo (si se usa para mensajes adicionales) */
+p {
+    font-size: 18px;
+    color: #666;
+    margin: 10px 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+/* Contenedor para la opción de registro/ingreso */
+#ingreso_registro {
+    background: #ffffff;
+    padding: 20px;
+    border: none;
+    margin-top: 20px;
+}
+

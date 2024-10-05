@@ -7,12 +7,12 @@ if($_POST){
            
        $si = $_POST["si" . $no] == 'on' ? "Si" : "No";
        	if ( $si=="Si") {
-			$sql = "UPDATE Tusuario SET estadoUsu='Bloqueado' 
-			WHERE idUsu = '$no'";
+			$sql = "UPDATE tbl_usuarios SET estado_usu='Bloqueado' 
+			WHERE id_usu = '$no'";
 			$query = mysqli_query($con,$sql);  
     } else	if ( $si=="No") {
-			$sql = "UPDATE Tusuario SET estadoUsu='Activo' 
-			WHERE idUsu = '$no'";
+			$sql = "UPDATE tbl_usuarios SET estado_usu='Activo' 
+			WHERE id_usu = '$no'";
 			$query = mysqli_query($con,$sql);  
     }
     if ($query){

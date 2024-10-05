@@ -15,11 +15,11 @@ function Header()
     // Salto de línea
     $this->Ln(20);
     $this->Cell(10,7,'Id', 1, 0, 'C', 0);
-	$this->Cell(50,7,'Fecha venta', 1, 0, 'C', 0);
+	$this->Cell(30,7,'Fecha venta', 1, 0, 'C', 0);
 	$this->Cell(20,7,'Cantidad', 1, 0, 'C', 0);
 	$this->Cell(30,7,'Precio', 1, 0, 'C', 0);
 	$this->Cell(35,7,'Cliente', 1, 0, 'C', 0);
-    $this->Cell(35,7,'Producto', 1, 1, 'C', 0);
+    $this->Cell(50,7,'Producto', 1, 1, 'C', 0);
 }
 
 
@@ -35,9 +35,9 @@ function Footer()
 }
 }
 
-$sql="SELECT * FROM Tventas 
-            JOIN tclientes ON Tventas.idCli = tclientes.idCli
-            JOIN tproductos ON Tventas.proId = tproductos.proId ORDER BY fechaVen desc";
+$sql="SELECT * FROM tbl_ventas 
+            JOIN tbl_clientes ON tbl_ventas.cliente_id = tbl_clientes.id_cli
+            JOIN tbl_productos ON tbl_ventas.producto_id = tbl_productos.id_produ ORDER BY fecha_ven desc";
 
         
         $result=mysqli_query($con,$sql);             
@@ -47,12 +47,12 @@ $pdf = new PDF();
 $pdf->AddPage();
 $pdf->SetFont('Arial','',10);
 while ($mostar= mysqli_fetch_assoc($result)) {
-	$pdf->Cell(10,7,$mostar['idVen'], 1, 0, 'C', 0);
-    $pdf->Cell(50,7,$mostar['fechaVen'], 1, 0, 'C', 0);
-	$pdf->Cell(20,7,$mostar['cantidadVen'], 1, 0, 'C', 0);
-	$pdf->Cell(30,7,$mostar['preVen'], 1, 0, 'C', 0);
-	$pdf->Cell(35,7,$mostar['nombreCli'], 1, 0, 'C', 0);
-	$pdf->Cell(35,7,$mostar['proNombre'], 1, 1, 'C', 0);
+	$pdf->Cell(10,7,$mostar['venta_id'], 1, 0, 'C', 0);
+    $pdf->Cell(30,7,$mostar['fecha_ven'], 1, 0, 'C', 0);
+	$pdf->Cell(20,7,$mostar['cant_ven'], 1, 0, 'C', 0);
+	$pdf->Cell(30,7,$mostar['precio_ven'], 1, 0, 'C', 0);
+	$pdf->Cell(35,7,$mostar['nom_cli'], 1, 0, 'C', 0);
+	$pdf->Cell(50,7,$mostar['nom_produ'], 1, 1, 'C', 0);
     
     
 }

@@ -17,9 +17,10 @@ function Header()
     $this->Cell(10,7,'Id', 1, 0, 'C', 0);
 	$this->Cell(30,7,'Nombres', 1, 0, 'C', 0);
 	$this->Cell(30,7,'Apellidos', 1, 0, 'C', 0);
+    $this->Cell(25,7,'Telefono', 1, 0, 'C', 0);
 	$this->Cell(20,7,'Rol', 1, 0, 'C', 0);
 	$this->Cell(30,7,'Usuario', 1, 0, 'C', 0);
-    $this->Cell(30,7,'Estado', 1, 0, 'C', 0);
+    $this->Cell(20,7,'Estado', 1, 0, 'C', 0);
     $this->Cell(35,7,'Fecha registro', 1, 1, 'C', 0);
 }
 
@@ -36,7 +37,7 @@ function Footer()
 }
 }
 
-$sql="SELECT * FROM tusuario";
+$sql="SELECT * FROM tbl_usuarios";
 $result=mysqli_query($con,$sql);             
 
 						
@@ -44,13 +45,14 @@ $pdf = new PDF();
 $pdf->AddPage();
 $pdf->SetFont('Arial','',10);
 while ($mostar= mysqli_fetch_assoc($result)) {
-	$pdf->Cell(10,7,$mostar['idUsu'], 1, 0, 'C', 0);
-	$pdf->Cell(30,7,$mostar['nombresUsu'], 1, 0, 'C', 0);
-	$pdf->Cell(30,7,$mostar['apellidosUsu'], 1, 0, 'C', 0);
-	$pdf->Cell(20,7,$mostar['rolUsu'], 1, 0, 'C', 0);
-	$pdf->Cell(30,7,$mostar['usuarioUsu'], 1, 0, 'C', 0);
-    $pdf->Cell(30,7,$mostar['estadoUsu'], 1, 0, 'C', 0);
-    $pdf->Cell(35,7,$mostar['fechaRegistroUsu'], 1, 1, 'C', 0);
+	$pdf->Cell(10,7,$mostar['id_usu'], 1, 0, 'C', 0);
+	$pdf->Cell(30,7,$mostar['nom_usu'], 1, 0, 'C', 0);
+	$pdf->Cell(30,7,$mostar['ape_usu'], 1, 0, 'C', 0);
+    $pdf->Cell(25,7,$mostar['tel_usu'], 1, 0, 'C', 0);
+	$pdf->Cell(20,7,$mostar['rol_usu'], 1, 0, 'C', 0);
+	$pdf->Cell(30,7,$mostar['usuario_usu'], 1, 0, 'C', 0);
+    $pdf->Cell(20,7,$mostar['estado_usu'], 1, 0, 'C', 0);
+    $pdf->Cell(35,7,$mostar['fechareg_usu'], 1, 1, 'C', 0);
 }
 $pdf->Output();
 ?>

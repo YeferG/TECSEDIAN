@@ -2,15 +2,15 @@
 if (isset($_GET['editar'])) {
 	$editar_id = $_GET['editar'];
 
-	$sql = "SELECT * FROM Tproductos where proId = '$editar_id'";
+	$sql = "SELECT * FROM tbl_productos where id_produ = '$editar_id'";
 	$query = mysqli_query($con,$sql);
 
 	$fila=mysqli_fetch_array($query);
 
-	$descripcion = $fila['proNombre'];
-	$precioCompra = $fila['proPreCom'];
-	$precioVenta = $fila['proPreVen'];
-	$stock = $fila['proStock'];
+	$descripcion = $fila['nom_produ'];
+	$precioCompra = $fila['precio_compra'];
+	$precioVenta = $fila['precio_venta'];
+	$stock = $fila['stock_produ'];
 }
 
 ?>
@@ -31,7 +31,7 @@ if (isset($_POST['actualizar'])) {
 	$actualizar_precioVenta= $_POST['preVenta'];
 	$actualizar_stock=$_POST['stocku'];
 
-	$sql= "UPDATE Tproductos SET proNombre='$actualizar_nombre',proPreCom=$actualizar_precioCompra,proPreVen=$actualizar_precioVenta, proStock=$actualizar_stock where  proId = '$editar_id'";
+	$sql= "UPDATE tbl_productos SET nom_produ='$actualizar_nombre',precio_compra=$actualizar_precioCompra,precio_venta=$actualizar_precioVenta, stock_produ=$actualizar_stock where  id_produ = '$editar_id'";
 
 	$query = mysqli_query($con,$sql);
 

@@ -3,7 +3,7 @@
  	if (isset($_GET['eliminar'])){
  		$eliminar_id = $_GET['eliminar'];
 
- 		$sql = "DELETE FROM Tproductos WHERE proId ='$eliminar_id'";
+ 		$sql = "DELETE FROM tbl_productos WHERE id_produ ='$eliminar_id'";
  		$query = mysqli_query($con,$sql);
 
 

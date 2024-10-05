@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<link rel="icon" href="imagenes/Isotipo.ico">
 	<title>Inicio de usuarios</title>
-	<link rel="stylesheet" type="text/css" href="css/estilos2.css">
+	<link rel="stylesheet" type="text/css" href="css/es_login.css">
 </head>
 
 <div id="todo">

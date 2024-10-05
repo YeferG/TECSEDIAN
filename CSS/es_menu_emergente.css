@@ -1,0 +1,133 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+/* Cabecera */
+#cabecera {
+    background-color: #000; /* Fondo negro elegante */
+    color: white;
+    width: 100%;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+}
+
+/* Logo en la cabecera */
+#cabecera img {
+    width: 150px;
+    max-height: 60px; /* Para evitar que sea demasiado alto */
+}
+
+/* Nombre del usuario y botón de cerrar sesión */
+#nombre-usuario {
+    margin-right: 20px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-cerrar-sesion {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-cerrar-sesion:hover {
+    background-color: #0056b3;
+    box-shadow: 0px 4px 12px rgba(0, 123, 255, 0.4);
+}
+
+/* Menú principal */
+#menu {
+    display: flex;
+    justify-content: center;
+}
+
+ul.menu-principal {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+.menu-item {
+    position: relative;
+}
+
+.menu-item > a {
+    background-color: transparent;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.menu-item > a:hover {
+    background-color: #007BFF;
+    border-radius: 8px;
+}
+
+/* Submenú */
+ul.submenu {
+    display: none;
+    position: absolute;
+    background-color: #1c1c1c;
+    list-style: none;
+    top: 100%;
+    left: 0;
+    min-width: 180px;
+    border-radius: 8px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+ul.submenu li {
+    border-top: 1px solid #333;
+}
+
+ul.submenu li:first-child {
+    border-top: none; /* Quita la línea superior en el primer elemento */
+}
+
+ul.submenu li a {
+    padding: 10px 15px;
+    display: block;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+ul.submenu li a:hover {
+    background-color: #434343;
+    border-radius: 8px;
+}
+
+/* Mostrar submenú al pasar el mouse */
+.menu-item:hover > ul.submenu {
+    display: block;
+}
+
+/* Estilo para el h2 del nombre del usuario */
+h2#nombre-usuario {
+    font-size: 18px;
+    font-weight: normal;
+    color: #ffffff;
+    margin: 0;
+}

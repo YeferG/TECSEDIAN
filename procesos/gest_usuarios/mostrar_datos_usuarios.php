@@ -1,21 +1,21 @@
 <?php 
 include_once($_SERVER['DOCUMENT_ROOT'] . '/bd/coneccion.php');
 
-	$consulta="SELECT * FROM tusuario";
+	$consulta="SELECT * FROM tbl_usuarios";
 	$ejecutar=mysqli_query($con,$consulta);
 	$i=0;
 	while ($fila=mysqli_fetch_array($ejecutar)) {
 
-		$id=$fila['idUsu'];
-		$nombres=$fila['nombresUsu'];
-		$apellidos=$fila['apellidosUsu'];
-		$telefono=$fila['telefonoUsu'];
-		$direccion=$fila['direccionUsu'];
-		$correo=$fila['correoUsu'];
-		$rol=$fila['rolUsu'];
-		$usuario=$fila['usuarioUsu'];
-		$estado = $fila['estadoUsu'];
-		$fecha_reg = $fila['fechaRegistroUsu'];
+		$id=$fila['id_usu'];
+		$nombres=$fila['nom_usu'];
+		$apellidos=$fila['ape_usu'];
+		$telefono=$fila['tel_usu'];
+		$direccion=$fila['dir_usu'];
+		$correo=$fila['cor_usu'];
+		$rol=$fila['rol_usu'];
+		$usuario=$fila['usuario_usu'];
+		$estado = $fila['estado_usu'];
+		$fecha_reg = $fila['fechareg_usu'];
 		$i++;
 		?>
 

@@ -9,50 +9,58 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Gestion de Compras</title>
 	<meta charset="utf-8">
-
+	<title>Gestion de Compras</title>
 	<link rel="icon" href="/imagenes/logo1.ico">
-	<link rel="stylesheet" type="text/css" href="/css/estilos.css">
-	<link rel="stylesheet" type="text/css" href="/css/estilos_menu.css">
-	<link rel="stylesheet" type="text/css" href="/css/estilos_tablas.css">
+	<link rel="stylesheet" type="text/css" href="/css/es_menu_emergente.css">
+	<link rel="stylesheet" type="text/css" href="/css/es_footer.css">
+	<link rel="stylesheet" type="text/css" href="/css/es_tablas.css">
 	<?php include_once($_SERVER['DOCUMENT_ROOT'] . '/bd/coneccion.php');?>
 </head>
 
-<body id="cuerpo">
+<body class="cont" id="cuerpo">
 <header id="cabecera">
-	<img src="/imagenes/Logo.png">
-	<div id="navegar">
-		<nav id="menu">
-			<h2 id="nom">Bienvenido: <?php echo  $_SESSION['usuario']?><a href="/procesos/gest_cuenta/cerrar_sesion.php"><button class="tn">CERRAR SESION</button></a></h2><br>
-			<ul class="nav">
-				<li><a style="width:102px;" href="" >Inventario</a>
-					<ul>
-						<li><a href="\procesos\gest_ventas\gest_ventas.php">Ventas</a></li>
-						<li><a href="\procesos\gest_compras\gest_compras.php">Compras</a></li>
-						<li><a href="\procesos\gest_productos\gest_productos.php">Productos</a></li>
-						<li><a href="\procesos\gest_proveedores\gest_proveedores.php">Provedores</a></li>
-						<li><a href="\procesos\gest_clientes\gest_clientes.php">Clientes</a></li>
-					</ul>
-				</li>
-				<li><a style="width:155px;" href="" >Reportes</a>
-					<ul>
-						<li><a href="/libreri/pdf.php">Reporte usuarios</a></li>
-						<li><a href="/libreri/pdf2.php">Reporte ventas</a></li>
-						<li><a href="/libreri/pdf3.php">Reporte compras</a></li>
-						<li><a href="/libreri/pdf4.php">Reporte producto</a></li>
-					</ul>
-				</li>
-				<li><a href="">Gestion de usuarios</a>
-					<ul>
-						<li><a style="width:180px;" href="\procesos\gest_usuarios\consultar_usuarios.php">Consultar usuarios</a></li>
-						<li><a href="\procesos\gest_usuarios\crear_usuarios.php">Crear usuario</a></li>
-						<li><a href="\procesos\gest_usuarios\form_bloquear_usuarios.php">Bloquear usuario</a></li>
-					</ul>
-				</li>
-			</ul>	
-		</nav>
-	</div>
+    <img src="/imagenes/Logo.png" alt="Logo de la empresa">
+    <div id="navegacion">
+        <nav id="menu">
+            <br>
+            <ul class="menu-principal">
+                <li class="menu-item">
+                    <a href="#">Inventario</a>
+                    <ul class="submenu">
+                        <li><a href="/procesos/gest_ventas/gest_ventas.php">Ventas</a></li>
+                        <li><a href="/procesos/gest_compras/gest_compras.php">Compras</a></li>
+                        <li><a href="/procesos/gest_productos/gest_productos.php">Productos</a></li>
+                        <li><a href="/procesos/gest_proveedores/gest_proveedores.php">Proveedores</a></li>
+                        <li><a href="/procesos/gest_clientes/gest_clientes.php">Clientes</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item">
+                    <a href="#">Reportes</a>
+                    <ul class="submenu">
+                        <li><a href="/libreri/pdf.php">Reporte usuarios</a></li>
+                        <li><a href="/libreri/pdf2.php">Reporte ventas</a></li>
+                        <li><a href="/libreri/pdf3.php">Reporte compras</a></li>
+                        <li><a href="/libreri/pdf4.php">Reporte productos</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item">
+                    <a href="#">Gestión de usuarios</a>
+                    <ul class="submenu">
+                        <li><a href="/procesos/gest_usuarios/consultar_usuarios.php">Consultar usuarios</a></li>
+                        <li><a href="/procesos/gest_usuarios/crear_usuarios.php">Crear usuario</a></li>
+                        <li><a href="/procesos/gest_usuarios/form_bloquear_usuarios.php">Bloquear usuario</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <h2 id="nombre-usuario">
+                Bienvenido: <?php echo $_SESSION['usuario']; ?>
+                <a href="/procesos/gest_cuenta/cerrar_sesion.php">
+                    <button class="btn-cerrar-sesion">CERRAR SESION</button>
+                </a>
+            </h2>
+        </nav>
+    </div>
 </header>
 
 <div id= "menu2">
@@ -61,18 +69,18 @@
 		<label>Proveedor: </label>
 		<select name="cliente">
 			<option value="">Seleccione</option>
-			<?php $sql=$con->query("SELECT * FROM tproveedores");
+			<?php $sql=$con->query("SELECT * FROM tbl_proveedores");
 				while ($fila = $sql->fetch_array()) {
-					echo "<option value='" . $fila['idProv']."'>".$fila['nombreProv']."</option>";
+					echo "<option value='" . $fila['id_provee']."'>".$fila['nom_provee']."</option>";
 				}
 			?>
 		</select>
 		<label>Producto: </label>
 		<select name="producto">
 			<option value="">Seleccione</option>
-			<?php $sql=$con->query("SELECT * FROM Tproductos");
+			<?php $sql=$con->query("SELECT * FROM tbl_productos");
 				while ($fila = $sql->fetch_array()) {
-					echo "<option value='" . $fila['proId']."'>".$fila['proNombre']."</option>";
+					echo "<option value='" . $fila['id_produ']."'>".$fila['nom_produ']."</option>";
 				}
 			?>
 			</select>
@@ -81,10 +89,10 @@
 	</form>
 
 	<?php 
-		$sql = "SELECT proPreCom FROM tproductos";
+		$sql = "SELECT precio_compra FROM tbl_productos";
 		$query = mysqli_query($con,$sql); 
 		$filas = mysqli_fetch_array($query);
-		$precio1 = $filas['proPreCom'];
+		$precio1 = $filas['precio_compra'];
 		if (isset($_POST['registrar3'])) {
 			date_default_timezone_set('America/Bogota');
 			$fecha = date("Y/m/d H:i:s");
@@ -92,7 +100,7 @@
 			$Producto = $_POST['producto'];
 			$cantidad = $_POST['cantidad'];
 			$precio = $cantidad * $precio1;
-			$insertar = " INSERT INTO tcompras (idProv, proId, fechaCom, cantidadCom, preCom) VALUES( $cliente, $Producto, '$fecha', $cantidad, $precio )";
+			$insertar = " INSERT INTO tbl_compras (proveedor_id, producto_id, fecha_com, cant_com, precio_com) VALUES( $cliente, $Producto, '$fecha', $cantidad, $precio )";
 			$ejecutar = mysqli_query($con,$insertar);
 			
 			if (!$ejecutar) {
@@ -131,18 +139,18 @@
 		</tr>
 	</thead>
 	<?php 
-		$sql="SELECT * FROM Tcompras
-			JOIN tproveedores ON Tcompras.idProv = tproveedores.idProv
-			JOIN tproductos ON Tcompras.proId = tproductos.proId ORDER BY fechaCom desc";
+		$sql="SELECT * FROM tbl_compras
+			JOIN tbl_proveedores ON tbl_compras.proveedor_id = tbl_proveedores.id_provee
+			JOIN tbl_productos ON tbl_compras.producto_id = tbl_productos.id_produ ORDER BY fecha_com desc";
 		$query=mysqli_query($con,$sql);
 		$i=0;
 		while ($fila=mysqli_fetch_array($query)) {
-			$id = $fila['idCom'];
-			$fecha = $fila['fechaCom'];
-			$cantidad = $fila['cantidadCom'];
-			$precio = $fila['preCom'];
-			$proveedor = $fila['nombreProv'];
-			$producto = $fila['proNombre'];
+			$id = $fila['compra_id'];
+			$fecha = $fila['fecha_com'];
+			$cantidad = $fila['cant_com'];
+			$precio = $fila['precio_com'];
+			$proveedor = $fila['nom_provee'];
+			$producto = $fila['nom_produ'];
 			$i++;
 	?>
 	<tr>
@@ -167,11 +175,14 @@
 
 </div>
 
-<footer id="pie">
-	<small>Contactanos</small><br>
-	<small>Linea telefonica  10034822203 Bogota-colombia.</small><br>
-	<small>correo tecsedian.soft@gmail.com</small><br>
-	<small>WhatsApp +57 3102692032 o +57 3042050035.</small>
+<footer>
+    <small>Contáctanos</small>
+    <small>Línea telefónica: 123456789</small>
+    <small>Correo: <a href="mailto:ejemplo@mail.com">ejemplo@mail.com</a></small>
+    <small>WhatsApp: <a href="https://wa.me/573022953980" target="_blank">+57 3022953980</a></small>
+    <small>Fusagasugá - Colombia</small>
 </footer>
+
+
 </body>
 </html>

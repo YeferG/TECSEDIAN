@@ -35,9 +35,9 @@ function Footer()
 }
 }
 
-$sql="SELECT * FROM Tcompras
-            JOIN tproveedores ON Tcompras.idProv = tproveedores.idProv
-            JOIN tproductos ON Tcompras.proId = tproductos.proId ORDER BY fechaCom desc";
+$sql="SELECT * FROM tbl_compras
+            JOIN tbl_proveedores ON tbl_compras.proveedor_id = tbl_proveedores.id_provee
+            JOIN tbl_productos ON tbl_compras.producto_id = tbl_productos.id_produ ORDER BY fecha_com desc";
 
         
         $result=mysqli_query($con,$sql);             
@@ -47,12 +47,12 @@ $pdf = new PDF();
 $pdf->AddPage();
 $pdf->SetFont('Arial','',10);
 while ($mostar= mysqli_fetch_assoc($result)) {
-    $pdf->Cell(10,7,$mostar['idCom'], 1, 0, 'C', 0);
-    $pdf->Cell(50,7,$mostar['fechaCom'], 1, 0, 'C', 0);
-    $pdf->Cell(20,7,$mostar['cantidadCom'], 1, 0, 'C', 0);
-    $pdf->Cell(30,7,$mostar['preCom'], 1, 0, 'C', 0);
-    $pdf->Cell(35,7,$mostar['nombreProv'], 1, 0, 'C', 0);
-    $pdf->Cell(35,7,$mostar['proNombre'], 1, 1, 'C', 0);
+    $pdf->Cell(10,7,$mostar['compra_id'], 1, 0, 'C', 0);
+    $pdf->Cell(50,7,$mostar['fecha_com'], 1, 0, 'C', 0);
+    $pdf->Cell(20,7,$mostar['cant_com'], 1, 0, 'C', 0);
+    $pdf->Cell(30,7,$mostar['precio_com'], 1, 0, 'C', 0);
+    $pdf->Cell(35,7,$mostar['nom_provee'], 1, 0, 'C', 0);
+    $pdf->Cell(35,7,$mostar['nom_produ'], 1, 1, 'C', 0);
     
     
 }

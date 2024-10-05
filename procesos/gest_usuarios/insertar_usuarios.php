@@ -14,7 +14,7 @@ if(isset($_POST['registrar'])){
     $estado= 'Activo';
     $fecha_reg=date('y/m/d H-i-s');
 
-     $sql="SELECT * FROM tusuario WHERE usuarioUsu='$usuario'"; 
+     $sql="SELECT * FROM tbl_usuarios WHERE usuario_usu='$usuario'"; 
     $result=mysqli_query($con, $sql);
     $filas=mysqli_num_rows($result);
   if($filas>0){
@@ -22,7 +22,7 @@ if(isset($_POST['registrar'])){
      echo "<script>window.open('form_crear_usuarios.php','_self')</script>";
    }else{
 
-    $consulta = "INSERT INTO tusuario (nombresUsu, apellidosUsu, telefonoUsu, direccionUsu, correoUsu, usuarioUsu, passwordUsu, estadoUsu,fechaRegistroUsu) VALUES ('$nombres','$apellidos','$telefono','$direccion','$email','$usuario','$password','$estado','$fecha_reg')";
+    $consulta = "INSERT INTO tbl_usuarios (nom_usu, ape_usu, tel_usu, dir_usu, cor_usu, usuario_usu, pass_usu, estado_usu,fechareg_usu) VALUES ('$nombres','$apellidos','$telefono','$direccion','$email','$usuario','$password','$estado','$fecha_reg')";
 
  $resulta = mysqli_query($con, $consulta);
       echo "<script>alert('Se registro correctamente')</script>";

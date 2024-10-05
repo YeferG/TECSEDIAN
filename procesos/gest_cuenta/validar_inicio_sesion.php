@@ -4,7 +4,7 @@ session_start();
 
 $usuario2 = trim($_POST['usuario']);
 $password2 = trim($_POST['password']);
-$consulta = "SELECT * FROM tusuario WHERE usuarioUsu='$usuario2' AND passwordUsu='$password2'"; 
+$consulta = "SELECT * FROM tbl_usuarios WHERE usuario_usu='$usuario2' AND pass_usu='$password2'"; 
 $resultado = mysqli_query($con, $consulta);
 $filas = mysqli_num_rows($resultado);
 
